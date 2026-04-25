@@ -18,13 +18,13 @@ withinRangeFloat min max num =
     let
         withinLowerBound = min <= num
         withinUpperBound = max >= num
-    in
-    withinLowerBound && withinUpperBound
+     in
+        withinLowerBound && withinUpperBound
 
 -- Function using where
 notInRangeInteger :: Integer -> Integer -> Integer -> Bool
-notInRangeInteger start end num =  outSideStart || outSideEnd
-    where
+notInRangeInteger start end num = outSideStart || outSideEnd
+  where
     outSideStart = start > num
     outSideEnd = end < num
 
@@ -33,14 +33,15 @@ notInRangeFloat :: Float -> Float -> Float -> Bool
 notInRangeFloat start end num =
     {- HLINT ignore "Redundant if" -}
     if outSideStart then outSideEnd else False
-    where
-        outSideStart = start > num
-        outSideEnd = end < num
+  where
+    outSideStart = start > num
+    outSideEnd = end < num
 
 -- Function Infix
 add :: Integer -> Integer -> Integer
 add num1 num2 = num1 + num2
 
 result1 = add 1 2
-result2 =  1 `add` 2
+result2 = 1 `add` 2
+
 -- Both are Equivalent
